@@ -1,3 +1,8 @@
+### Java 
+    ## path of JAVA_HOME variable
+        $> echo %JAVA_HOME%
+
+
 ### Docker
     ## build image (no capital letters)
         $> docker build -t <name_of_image>:<version>
