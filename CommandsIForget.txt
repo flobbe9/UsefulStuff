@@ -60,3 +60,8 @@
 ### SSH-key
     ## generate ssh-key for git repo
         $> ssh-keygen -t rsa -b 4096
+
+
+### Git
+    ## webhook url for github + jenkins
+        https://228b9f82.ngrok.io/github-webhook
