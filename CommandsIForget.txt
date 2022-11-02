@@ -43,6 +43,9 @@
 ### Spring-boot
     ## run api (very first folder with src, pom.xml...)
         $> mvn spring-boot:run
+    
+    ## run tests (very first folder...)
+        $> mvn test
 
 
 ### Node.js
@@ -62,6 +65,6 @@
         $> ssh-keygen -t rsa -b 4096
 
 
-### Git
-    ## webhook url for github + jenkins
-        https://228b9f82.ngrok.io/github-webhook
+### ngrok
+    ## make localhost port accessible from internet (e.g. localhost:8080: <portnumber>=8080)
+        $> ngrok http <portnumber>
