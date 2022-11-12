@@ -19,13 +19,19 @@
 
 ### Jar
     ## create Jar with all files in folder (replace '.' with target files if you don't want all to be added)
-        $> jar cf example.jar . 
+        $> jar cf <fileName>.jar . 
 
     ## create Jar with specified path
-        $> jar cf example.jar -C folderInWhichJarStarts/ .
+        $> jar cf <fileName>.jar -C folderInWhichJarStarts/ .
     
     ## create Jar with mvn (classpath icluded automatically)
         $> mvn package
+
+    ## create Jar with gradle 
+        $> gradle bootJar
+
+    ## execute Jar file (works for war files as well, use exact same command but different file prefix)
+        $> java -jar <fileName>.jar
 
 
 ### PostgreSQL
