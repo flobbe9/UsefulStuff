@@ -5,7 +5,7 @@
 
 ### Docker
     ## build image (no capital letters)
-        $> docker build -t <name_of_image>:<version>
+        $> docker build -t <name_of_image>:<version> .
 
     ## run container (no capital letters, -d is optional, -e only for postgres container)
         $> docker run --name <name_of_container> -d -p 4001:4001 -e POSTGRES_PASSWORD=<password> <name_of_image>:<version>
@@ -47,11 +47,17 @@
 
 
 ### Spring-boot
-    ## run api (very first folder with src, pom.xml...)
+    ## run api (very first folder with src, pom.xml...) with maven
         $> mvn spring-boot:run
     
-    ## run tests (very first folder...)
+    ## run tests (very first folder...) with maven
         $> mvn test
+
+    ## run api (very first folder with src, pom.xml...) with gradle
+        $> gradle bootRun
+    
+    ## run tests (very first folder...) with gradle
+        $> gradle test
 
 
 ### Node.js
