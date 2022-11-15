@@ -43,8 +43,8 @@
 
 
 ### MySQL
-    ## access bash
-
+    ## access bash (with -p you will be asked to enter the password, with --password=<password> you wont)
+        $> mysql -h localhost -u <username> -p <mydatabase>
 
 ### Spring-boot
     ## run api (very first folder with src, pom.xml...) with maven
