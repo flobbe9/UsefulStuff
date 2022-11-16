@@ -16,6 +16,15 @@
     ## get ip adress of container
         $> docker inspect <name_of_container> | grep IPAddress
 
+    ## bash into docker
+        $> docker exec -it <containerId> /bin/bash
+
+    ## rename docker target
+        $> docker tag <exampleProject>:<tag> <account>/<repo>:<tag>
+
+    ## push docker image (first rename tag)
+        $> docker push <account>/<repo>:<tag>
+
 
 ### Jar
     ## create Jar with all files in folder (replace '.' with target files if you don't want all to be added)
