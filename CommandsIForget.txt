@@ -81,9 +81,13 @@
         $> keytool -genkeypair -alias <something> -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore <fileName>.p12 -validity 3650
 
 
-### SSH-key
+### Git
     ## generate ssh-key for git repo
         $> ssh-keygen -t rsa -b 4096
+    
+    ## set username / email
+        $> git config --global user.name <username>
+        $> git config --global user.email <email>
 
 
 ### ngrok
