@@ -82,12 +82,19 @@
 
 
 ### Git
-    ## generate ssh-key for git repo
+    ## generate ssh-key for git repo 
         $> ssh-keygen -t rsa -b 4096
+        or just
+        $> ssh-keygen
     
     ## set username / email
         $> git config --global user.name <username>
         $> git config --global user.email <email>
+
+    ## add ssh-key to agent (BitBucket), don't close bash in between
+        $> eval "$(ssh-agent -s)"
+        $> ssh-add ~/.ssh/<ssh-keyName>
+        $> git config core.sshCommand "ssh -i ~/.ssh/<ssh-keyName> -F /dev/null"
 
 
 ### ngrok
