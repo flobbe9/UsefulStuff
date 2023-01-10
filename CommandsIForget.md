@@ -39,7 +39,7 @@
 - create Jar with gradle
     > gradle bootJar
 
-- execute Jar file (works for war files as well, use exact same command but different file prefix)
+- execute Jar file (works for .war files as well, use exact same command but different file prefix)
     > java -jar [fileName].jar
 
 
