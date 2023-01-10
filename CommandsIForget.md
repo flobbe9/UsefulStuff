@@ -102,8 +102,8 @@
 - set email
     > git config --global user.email [email]
 
-- add ssh-key to agent (BitBucket), don't close bash in between
-    > eval "(ssh-agent -s)"<br>
+- add ssh-key to agent (BitBucket), use gitBash, don't close bash in between
+    > eval `ssh-agent -s`<br>
     > ssh-add ~/.ssh/[ssh-keyName]<br>
     > git config core.sshCommand "ssh -i ~/.ssh/[ssh-keyName] -F /dev/null"
 
