@@ -91,7 +91,7 @@
 
 
 ### Git
-- generate ssh-key for git repo 
+- generate ssh-key for git repo
     > ssh-keygen -t rsa -b 4096
     - or just
     > ssh-keygen
