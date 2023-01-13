@@ -111,3 +111,8 @@
 ### ngrok
 - make localhost port accessible from internet (e.g. localhost:8080: [portnumber]=8080)
     > ngrok http [portnumber]
+
+
+### Other
+- compare two files in VSCode (use relative paths starting with ./src/...)
+    > code --diff [path1] [path2]
