@@ -81,7 +81,7 @@
     > npx create-react-app [appName]
 
 - start react app
-    > cd [appName]<br>
+    > cd [appName]<br> 
     > npm start
 
 
