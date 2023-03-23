@@ -16,3 +16,8 @@
 
 ### Editor (json to yml)
 - https://editor.swagger.io/# 
+
+
+# Other
+### MS Edge disable https for localhost
+- edge://net-internals/#hsts
