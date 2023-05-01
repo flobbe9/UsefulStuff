@@ -42,6 +42,10 @@
 - execute Jar file (works for .war files as well, use exact same command but different file prefix)
     > java -jar [fileName].jar
 
+- extract Jar/War file
+    > jar -xvf [fileName].jar
+    or
+    > jar -xvf [fileName].war
 
 ### PostgreSQL
 - access bash
