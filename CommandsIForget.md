@@ -73,6 +73,11 @@
     > gradle test
 
 
+###
+- create emtpy maven project
+    > mvn archetype:generate
+
+
 ### Node.js
 - transpile typescript (remember to set "esModuleInterop": true in tsconfig.json for modules and name *.mts instead of *.ts)
     > tsc.cmd 
