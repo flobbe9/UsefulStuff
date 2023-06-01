@@ -106,10 +106,10 @@
     > ssh-keygen
 
 - set username
-    > git config --global user.name [username]
+    > git config user.name [username]
 
 - set email
-    > git config --global user.email [email]
+    > git config user.email [email]
 
 - add ssh-key to agent (BitBucket), use gitBash, don't close bash in between
     > eval `ssh-agent -s`<br>
