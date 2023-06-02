@@ -73,7 +73,7 @@
     > gradle test
 
 
-###
+### Maven
 - create emtpy maven project
     > mvn archetype:generate
 
