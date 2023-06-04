@@ -111,11 +111,16 @@
 - set email
     > git config user.email [email]
 
-- add ssh-key to agent (BitBucket), use gitBash, don't close bash in between
+- add ssh-key to agent, use gitBash, don't close bash in between
     > eval `ssh-agent -s`<br>
     > ssh-add ~/.ssh/[ssh-keyName]<br>
     > git config core.sshCommand "ssh -i ~/.ssh/[ssh-keyName] -F /dev/null"
 
+- add ssh-key to agent permanently 
+    > cd ~/.ssh/config 
+    (if not exists create empty)
+    write: IdentityFile ~/.ssh/[ssh-keyName]
+    
 
 ### ngrok
 - make localhost port accessible from internet (e.g. localhost:8080: [portnumber]=8080)
