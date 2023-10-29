@@ -17,3 +17,40 @@
     }
     
     ```
+
+### Spring
+    ```
+    /**
+     * Cors config as bean
+     */
+    @Bean
+    WebMvcConfigurer corsConfigurer() {
+
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:3001")
+                        .allowedMethods("GET", "POST", "UPDATE", "DELETE")
+                        .allowedHeaders("*");
+            }
+        };
+    }
+
+
+    /**
+     * Cors config to inject in security filter chain
+     */
+    private CorsConfigurationSource corsConfigurationSource() {
+
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3001"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "UPDATE", "DELETE"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/api/appUser/**", configuration);
+
+        return source;
+    }
+    ```
