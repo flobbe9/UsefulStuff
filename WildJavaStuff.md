@@ -22,6 +22,7 @@
     ```
     /**
      * Cors config as bean
+     * Use this if spring security is not used.
      */
     @Bean
     WebMvcConfigurer corsConfigurer() {
@@ -39,7 +40,8 @@
 
 
     /**
-     * Cors config to inject in security filter chain
+     * Cors config to inject in security filter chain.
+     * Use this if spring security is used.
      */
     private CorsConfigurationSource corsConfigurationSource() {
 
