@@ -1,3 +1,6 @@
 ### Test files
 *.java
 *.class
+
+### gradle
+.gradle

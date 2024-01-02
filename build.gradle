@@ -1,0 +1,7 @@
+// set java options
+bootRun {
+    jvmArgs([
+        "-Xms256m",
+        "-Xmx512m"
+    ])
+}
