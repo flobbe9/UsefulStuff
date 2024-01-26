@@ -7,8 +7,14 @@
 - build image (no capital letters)
     > docker build -t [name_of_image]:<version> .
 
+- remove image
+    > docker image rm [imageName]
+
 - run container (no capital letters, -d is optional, -e only for postgres container)
     > docker run --name [name_of_container] -d -p 4001:4001 -e POSTGRES_PASSWORD=[password] [name_of_image]:[version]
+
+- remove container
+    > docker rm [containerId]
 
 - docker-compose
     > docker-compose up
@@ -24,6 +30,12 @@
 
 - push docker image (first rename tag)
     > docker push [account]/[repo]:[tag]
+
+- view running containers
+    > docker ps
+
+- view all containers
+    > docker ps -a
 
 
 ### Jar
@@ -47,6 +59,7 @@
     or
     > jar -xvf [fileName].war
 
+
 ### PostgreSQL
 - access bash
     > psql -U username
@@ -58,6 +71,7 @@
 ### MySQL
 - access bash (with -p you will be asked to enter the password, with --password=[password] you wont)
     > mysql -h localhost -u [username] -p [mydatabase]
+
 
 ### Spring-boot
 - run api (very first folder with src, pom.xml...) with maven
@@ -127,6 +141,40 @@
     > ngrok http [portnumber]
 
 
-### Other
+### linux commands
+- install stuff on linux
+    > yum install [packageName]
+    or 
+    > sudo install
+
+- create directory
+    > mkdir [dirName]
+
+- delete directory
+    > rm -rf [dirName]
+
+- create file
+    > touch [fileName].[fielExtension]
+    Example:
+    > touch test.txt
+
+- delete file
+    > rm [fileName]
+
+- task manager
+    > top
+
+- view memory usage in mb
+    > free -m
+    
+
+### shh
+- create ssh tunnel to differnt computer
+    > ssh [user]@[ipAdress]
+    Example:
+    > ssh root@85.215.107.124
+
+
+### code
 - compare two files in VSCode (use relative paths starting with ./src/...)
     > code --diff [path1] [path2]
