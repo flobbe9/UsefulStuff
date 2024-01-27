@@ -134,6 +134,14 @@
     > cd ~/.ssh/config 
     (if not exists create empty)
     write: IdentityFile ~/.ssh/[ssh-keyName]
+
+- exclude file from git merge
+    1. add .gitattributes file to project root
+    2. write: [fileName] merge=ours
+        Example: .env merge=ours
+    3. run 
+        > git config merge.ours.driver true
+    for changes to take effect
     
 
 ### ngrok
