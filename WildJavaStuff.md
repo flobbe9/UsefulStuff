@@ -1,5 +1,4 @@
-### Lambdas
-    ```
+# Lambdas
     static void lambdaFunction(Runnable runnable) {
         // returns nothing
         runnable.run();
@@ -16,10 +15,9 @@
         labmdaFunction2(() -> "");
     }
     
-    ```
 
-### Spring
-    ```
+# Spring
+### Cors
     /**
      * Cors config as bean
      * Use this if spring security is not used.
@@ -41,9 +39,9 @@
 
     /**
      * Cors config to inject in security filter chain.
-     * Use this if spring security is used.
+     * Use this if spring security is used. In filter chain: http.cors(cors -> cors.configurationSource(customCorsConfig())).
      */
-    private CorsConfigurationSource corsConfigurationSource() {
+    private CorsConfigurationSource customCorsConfig() {
 
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList("http://localhost:3001"));
@@ -55,4 +53,27 @@
 
         return source;
     }
-    ```
+
+
+    /**
+     * Configure CORS. 
+     * Use this with spring cloud
+     */
+    @Bean
+    CorsWebFilter corsWebFilter() {
+        
+        CorsConfiguration corsConfig = new CorsConfiguration();
+        corsConfig.setAllowedOrigins(List.of("http://localhost:3000"));
+        corsConfig.addAllowedMethod(HttpMethod.GET.name());
+        corsConfig.addAllowedMethod(HttpMethod.POST.name());
+        corsConfig.addAllowedMethod(HttpMethod.PUT.name());
+        corsConfig.addAllowedMethod(HttpMethod.DELETE.name());
+        corsConfig.addAllowedMethod(HttpMethod.OPTIONS.name());
+        corsConfig.addAllowedHeader("*");
+        corsConfig.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", corsConfig);
+
+        return new CorsWebFilter(source);
+    }
