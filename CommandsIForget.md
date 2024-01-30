@@ -110,7 +110,15 @@
 
 ### SSL
 - create self signed certificate
-    > keytool -genkeypair -alias [something] -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore [fileName].p12 -validity 3650
+    > keytool -genkeypair -alias [someAlias] -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore [fileName].p12 -validity 3650
+
+- create csr file for ssl certificate
+    > keytool –keystore [sameFilenameAsBefore].[sameFileExtensionAsBefore] –certreq –alias [sameAliasAsBefore] –keyalg RSA –file [fileName].csr
+
+- disable https redirect in MS Edge
+    1. Enter ```edge://net-internals/#hsts``` in url bar
+    2. Enter [host] under "Delete domain security policies", i.e. localhost (don't use port)
+    3. Press "Delete"
 
 
 ### Git
