@@ -198,3 +198,5 @@
 ### Windows
 - find process by port
     > netstat -ano | findstr [port]
+    or (better)
+    > Get-Process -Id (Get-NetTCPConnection -LocalPort [port]).OwningProcess
