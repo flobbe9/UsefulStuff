@@ -194,3 +194,7 @@
 ### code
 - compare two files in VSCode (use relative paths starting with ./src/...)
     > code --diff [path1] [path2]
+
+### Windows
+- find process by port
+    > netstat -ano | findstr [port]
