@@ -16,6 +16,9 @@
 - remove container
     > docker rm [containerId]
 
+- stop all containers
+    > docker stop $(docker ps -q)
+
 - docker-compose
     > docker-compose up
 
