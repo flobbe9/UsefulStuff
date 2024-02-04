@@ -116,7 +116,28 @@
     > keytool -genkeypair -alias [someAlias] -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore [fileName].p12 -validity 3650
 
 - create csr file for ssl certificate
-    > keytool –keystore [sameFilenameAsBefore].[sameFileExtensionAsBefore] –certreq –alias [sameAliasAsBefore] –keyalg RSA –file [fileName].csr
+    > keytool –keystore [sameFileNameAsBefore].p12 –certreq –alias [sameAliasAsBefore] –keyalg RSA –file [fileName].csr
+
+- create cert.pem and key.pem from .p12 file (i.e. for react)
+    > openssl pkcs12 -in [sameFileNameAsBefore].p12 -out [someName].crt.pem -clcerts -nokeys
+    > openssl pkcs12 -in [sameFileNameAsBefore].p12 -out [someName].key.pem -nocerts -nodes
+
+- view certificates in keystore / truststore
+    > keytool -v -list -keystore [sameFileNameAsBefore].p12
+
+- add .crt file to java truststore
+    > cd $JAVA_HOME/lib/security
+    (a file named "cacerts" should be there)
+    > keytool -import -alias [sameAliasAsBefore] -file [certFileName].crt -storetype JKS -keystore cacerts
+    > enter password of cacerts truststore (default is "changeit")
+    > select option "yes" when asked "Trust certificate?"
+
+- add .crt file to any keystore
+    > keytool -importcert -keystore [sameFileNameAsBefore].p12 -trustcacerts -alias [sameAliasAsBefore] -file [certificateFileName].crt -storetype PKCS12 -keyalg RSA
+
+- delete certificate from keystore
+    > keytool -delete -alias [alias] -keystore [keystoreName].p12
+
 
 - disable https redirect in MS Edge
     1. Enter ```edge://net-internals/#hsts``` in url bar
