@@ -118,9 +118,10 @@
 - create csr file for ssl certificate
     > keytool –keystore [sameFileNameAsBefore].p12 –certreq –alias [sameAliasAsBefore] –keyalg RSA –file [fileName].csr
 
-- create cert.pem and key.pem from .p12 file (i.e. for react)
+- create cert.pem and key.pem from .p12 file (i.e. for react). 
     > openssl pkcs12 -in [sameFileNameAsBefore].p12 -out [someName].crt.pem -clcerts -nokeys
     > openssl pkcs12 -in [sameFileNameAsBefore].p12 -out [someName].key.pem -nocerts -nodes
+    Remove -nodes flag in order to encrypt the file
 
 - view certificates in keystore / truststore
     > keytool -v -list -keystore [sameFileNameAsBefore].p12
