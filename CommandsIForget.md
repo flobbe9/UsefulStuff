@@ -208,6 +208,15 @@
 - view memory usage in mb
     > free -m
     
+- get process by port
+    > sudo netstat -ltnp | grep ':[port]' 
+    kill process with number from far right column (i.e. column value: "3753/mysqld", then use "3753")
+    > kill -9 
+
+- kill process
+    PID is second column
+    > ps -ef| grep [name or substring of the program]
+    > kill -9 [PID]
 
 ### shh
 - create ssh tunnel to differnt computer
