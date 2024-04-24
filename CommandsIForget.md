@@ -111,6 +111,11 @@
     > npm start
 
 
+### React Native
+- create app with typescript
+    > npx react-native init [appName] --template react-native-template-typescript
+
+
 ### SSL
 - create self signed certificate
     > keytool -genkeypair -alias [someAlias] -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore [fileName].p12 -validity 3650
