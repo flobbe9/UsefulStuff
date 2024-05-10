@@ -237,10 +237,11 @@
     Example:
     > ssh root@85.215.107.124
 
-- add ssh key to remote server
-    > ssh-copy-id -i ~/.ssh/[myLocalSSHKey] [user]@[domainOrIpAddress]
-    e.g.
-    > ssh-copy-id -i ~/.ssh/myDomain root@123.12309.123
+- add ssh public key (.pub) to remote server
+    > cd ~/.ssh
+    > scp ./[publicKeyName].pub root@[ipAddress/Host]:~/.ssh/
+    Then copy the contents of the public key into ```authorized_keys``` file (using vim e.g.)
+
 
 ### code
 - compare two files in VSCode (use relative paths starting with ./src/...)
