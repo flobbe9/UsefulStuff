@@ -240,8 +240,12 @@
 - add ssh public key (.pub) to remote server
     > cd ~/.ssh
     > scp ./[publicKeyName].pub root@[ipAddress/Host]:~/.ssh/
-    Then copy the contents of the public key into ```authorized_keys``` file (using vim e.g.)
-
+    Then copy the contents of the public key into ```authorized_keys``` file (using vim e.g.). <br>
+    Add this to the local ~/.ssh/config file:
+    Host [domainName]
+        HostName [domainName]
+        User root
+        IdentityFile ~/.ssh/[publicKeyName]    
 
 ### code
 - compare two files in VSCode (use relative paths starting with ./src/...)
