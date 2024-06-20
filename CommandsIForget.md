@@ -263,3 +263,7 @@
     - find JBOSS_JAVA_SIZING -Xmx flag
     - Xmx = max heap size
     - Xms = min heap size
+
+- increase db transaction timeout
+    - cd standalone.xml
+    - add <coordinator-environment default-timeout="6000"/> 
