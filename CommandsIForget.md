@@ -241,3 +241,10 @@
     > netstat -ano | findstr [port]
     or (better)
     > Get-Process -Id (Get-NetTCPConnection -LocalPort [port]).OwningProcess
+
+### Wildfly
+- increase java heap
+    - cd standlone.conf.bat
+    - find JBOSS_JAVA_SIZING -Xmx flag
+    - Xmx = max heap size
+    - Xms = min heap size
