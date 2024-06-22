@@ -300,3 +300,14 @@
     > scp ./[fileName] root@[ipAddress/Host]:[targetFolderName]
     copy folder
     > scp -r ./[folderName] root@[ipAddress/Host]:[targetFolderName]
+    
+### Wildfly
+- increase java heap
+    - cd standlone.conf.bat
+    - find JBOSS_JAVA_SIZING -Xmx flag
+    - Xmx = max heap size
+    - Xms = min heap size
+
+- increase db transaction timeout
+    - cd standalone.xml
+    - add <coordinator-environment default-timeout="6000"/> 
