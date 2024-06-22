@@ -256,6 +256,20 @@
 - copy file / folder 
     > cp -r [fileName].txt /[folderPath]
 
+- remove process from autostart
+    > chkconfig [serviceName] off
+    > systemctl disable [serviceName]
+
+- change password (if [user] is ommited, user=root is assumed)
+    > passwd [user]
+
+- change user of file
+    > chown [owner_user_name] [fileName]
+
+- change file permission
+    > chmod [number] [fileName]
+        E.g. > chmod 644 test.txt
+
 ### shh
 - create ssh tunnel to differnt computer
     > ssh [user]@[ipAdress]
@@ -281,3 +295,8 @@
     > netstat -ano | findstr [port]
     or (better)
     > Get-Process -Id (Get-NetTCPConnection -LocalPort [port]).OwningProcess
+
+- copy files to linux server
+    > scp ./[fileName] root@[ipAddress/Host]:[targetFolderName]
+    copy folder
+    > scp -r ./[folderName] root@[ipAddress/Host]:[targetFolderName]
