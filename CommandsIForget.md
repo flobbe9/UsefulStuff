@@ -311,3 +311,16 @@
 - increase db transaction timeout
     - cd standalone.xml
     - add <coordinator-environment default-timeout="6000"/> 
+
+### Github
+- use .env file in pipeline
+    ```
+    - name: Checkout repository 
+      uses: actions/checkout@v4
+
+    - name: get env from .env file
+      run: |
+        echo $(cat .env | grep '^VERSION=.*$') >> $GITHUB_ENV
+        echo $(cat .env | grep '^WORDPRESS_VERSION=.*$') >> $GITHUB_ENV
+    ```
+    then access the variable like ```${{env.VERSION}}``` and ```${{env.WORDPRESS_VERSION}}```
