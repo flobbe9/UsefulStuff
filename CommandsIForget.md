@@ -322,5 +322,6 @@
       run: |
         echo $(cat .env | grep '^VERSION=.*$') >> $GITHUB_ENV
         echo $(cat .env | grep '^WORDPRESS_VERSION=.*$') >> $GITHUB_ENV
+      shell: bash
     ```
     then access the variable like ```${{env.VERSION}}``` and ```${{env.WORDPRESS_VERSION}}```
