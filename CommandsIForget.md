@@ -325,3 +325,9 @@
       shell: bash
     ```
     then access the variable like ```${{env.VERSION}}``` and ```${{env.WORDPRESS_VERSION}}```
+
+### SQL
+- TINYBLOB (TINYTEXT): Only supports up to 255 bytes.
+- BLOB: Can handle up to 65,535 bytes of data.
+- MEDIUMBLOB: The maximum length supported is 16,777,215 bytes.
+- LONGBLOB: Stores up to 4,294,967,295 bytes of data.
